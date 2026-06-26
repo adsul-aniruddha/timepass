@@ -1,848 +1,1556 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Luminary Studio — Premium digital experiences crafted with precision. Web design, development, and strategy for ambitious brands." />
-  <meta name="keywords" content="web design, development, digital agency, UI/UX, branding, SEO" />
-  <meta name="author" content="Luminary Studio" />
-  <meta property="og:title" content="Luminary Studio — Digital Craft at Scale" />
-  <meta property="og:description" content="We build digital products that perform, inspire, and endure." />
-  <meta property="og:type" content="website" />
-  <title>Luminary Studio — Digital Craft at Scale</title>
 
-  <!-- Bootstrap 5 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
-  <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-  <!-- Google Fonts: Syne + Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Modern Business Website built with HTML5, CSS3, JavaScript and Bootstrap 5.">
+    <meta name="keywords"
+        content="Business, Startup, Portfolio, Bootstrap 5, HTML5, CSS3, JavaScript">
+    <meta name="author" content="Your Company">
+
+    <title>NovaTech | Modern Business Website</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- ========== NAVBAR ========== -->
-  <nav id="mainNav" class="navbar navbar-expand-lg fixed-top" aria-label="Main navigation">
-    <div class="container">
-      <a class="navbar-brand" href="#hero">
-        <span class="brand-mark">◆</span> Luminary
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-        data-bs-target="#navbarNav" aria-controls="navbarNav"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="toggler-icon"></span>
-        <span class="toggler-icon"></span>
-        <span class="toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
-          <li class="nav-item"><a class="nav-link" href="#portfolio">Work</a></li>
-          <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
-          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
-          <li class="nav-item ms-lg-3">
-            <a class="nav-link btn-nav" href="#contact">Let's talk</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- ========== HERO ========== -->
-  <section id="hero" class="hero-section" aria-label="Hero">
-    <!-- Animated mesh canvas -->
-    <canvas id="meshCanvas" aria-hidden="true"></canvas>
-
-    <div class="container hero-content">
-      <div class="row justify-content-center text-center">
-        <div class="col-lg-10 col-xl-9">
-          <p class="hero-eyebrow reveal-up">Digital Studio · Est. 2019</p>
-          <h1 class="hero-headline reveal-up delay-1">
-            We craft digital<br />
-            <span class="gradient-text">experiences</span><br />
-            that endure.
-          </h1>
-          <p class="hero-sub reveal-up delay-2">
-            Strategy, design, and engineering for brands that refuse to be ordinary.
-            From MVP to market-leader — we build what matters.
-          </p>
-          <div class="hero-cta reveal-up delay-3">
-            <a href="#portfolio" class="btn btn-primary-custom">See our work</a>
-            <a href="#contact" class="btn btn-ghost-custom">Start a project</a>
-          </div>
-        </div>
-      </div>
+    <!-- ========================= -->
+    <!-- Loader -->
+    <!-- ========================= -->
+    <div id="loader">
+        <div class="loader-spinner"></div>
     </div>
 
-    <!-- Scroll indicator -->
-    <div class="scroll-indicator" aria-hidden="true">
-      <span></span>
-    </div>
+    <!-- Scroll Progress -->
+    <div id="progress-bar"></div>
 
-    <!-- Stats bar -->
-    <div class="hero-stats reveal-up delay-4">
-      <div class="container">
-        <div class="stats-row">
-          <div class="stat-item">
-            <span class="stat-num" data-target="140">0</span><span class="stat-suffix">+</span>
-            <span class="stat-label">Projects shipped</span>
-          </div>
-          <div class="stat-divider" aria-hidden="true"></div>
-          <div class="stat-item">
-            <span class="stat-num" data-target="98">0</span><span class="stat-suffix">%</span>
-            <span class="stat-label">Client satisfaction</span>
-          </div>
-          <div class="stat-divider" aria-hidden="true"></div>
-          <div class="stat-item">
-            <span class="stat-num" data-target="6">0</span><span class="stat-suffix">yr</span>
-            <span class="stat-label">In the field</span>
-          </div>
-          <div class="stat-divider" aria-hidden="true"></div>
-          <div class="stat-item">
-            <span class="stat-num" data-target="32">0</span><span class="stat-suffix"></span>
-            <span class="stat-label">Team members</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- Back To Top -->
+    <button id="backToTop" aria-label="Back To Top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
 
-  <!-- ========== ABOUT ========== -->
-  <section id="about" class="section-light" aria-label="About us">
-    <div class="container">
-      <div class="row align-items-center g-5">
-        <div class="col-lg-5 reveal-left">
-          <div class="about-visual">
-            <div class="av-card av-card--1">
-              <i class="bi bi-lightning-charge-fill"></i>
-              <span>Strategy-first</span>
+    <!-- ========================= -->
+    <!-- Navbar -->
+    <!-- ========================= -->
+
+    <nav class="navbar navbar-expand-lg fixed-top glass-nav">
+
+        <div class="container">
+
+            <a class="navbar-brand fw-bold" href="#">
+                NovaTech
+            </a>
+
+            <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse"
+                id="navbarNav">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link active"
+                            href="#home">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                            href="#about">
+                            About
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                            href="#services">
+                            Services
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                            href="#portfolio">
+                            Portfolio
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                            href="#pricing">
+                            Pricing
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                            href="#contact">
+                            Contact
+                        </a>
+                    </li>
+
+                    <li class="nav-item ms-3">
+                        <button id="themeToggle"
+                            class="btn btn-outline-light rounded-pill">
+
+                            <i class="bi bi-moon-stars"></i>
+
+                        </button>
+                    </li>
+
+                </ul>
+
             </div>
-            <div class="av-card av-card--2">
-              <i class="bi bi-award-fill"></i>
-              <span>Award-winning</span>
-            </div>
-            <div class="av-grid" aria-hidden="true">
-              <!-- decorative grid dots -->
-              <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <pattern id="dotGrid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-                  <circle cx="2" cy="2" r="1.5" fill="#5B6BF8" opacity="0.3" />
-                </pattern>
-                <rect width="200" height="200" fill="url(#dotGrid)" />
-              </svg>
-            </div>
-            <div class="av-photo">
-              <div class="av-photo-inner">
-                <div class="av-initials">LS</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-7 reveal-right">
-          <p class="section-eyebrow">Who we are</p>
-          <h2 class="section-title">A small team with an outsized impact</h2>
-          <p class="section-body">
-            Luminary Studio was founded on a simple belief: great digital products need
-            ruthless focus on craft. We're a boutique studio of designers, engineers, and
-            strategists who've shipped products used by millions — and we bring that
-            same rigor to every engagement, regardless of size.
-          </p>
-          <p class="section-body">
-            We don't take on more than we can execute brilliantly. That means your project
-            gets real attention from senior people, not hand-offs to juniors.
-          </p>
-          <div class="about-pills">
-            <span class="pill">Human-centered design</span>
-            <span class="pill">Agile sprints</span>
-            <span class="pill">Performance-first</span>
-            <span class="pill">Transparent pricing</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ========== SERVICES ========== -->
-  <section id="services" class="section-dark" aria-label="Services">
-    <div class="container">
-      <div class="text-center mb-section reveal-up">
-        <p class="section-eyebrow">What we do</p>
-        <h2 class="section-title light">End-to-end digital services</h2>
-        <p class="section-sub">From the first sketch to the final deploy — and everything in between.</p>
-      </div>
-      <div class="row g-4">
-
-        <!-- Service cards -->
-        <div class="col-md-6 col-lg-4 reveal-up delay-1">
-          <div class="service-card">
-            <div class="sc-icon"><i class="bi bi-pen"></i></div>
-            <h3 class="sc-title">UI/UX Design</h3>
-            <p class="sc-body">Research-driven interfaces with intentional micro-interactions and accessibility baked in from the start.</p>
-            <ul class="sc-list">
-              <li>User research &amp; journey mapping</li>
-              <li>Wireframes &amp; prototypes</li>
-              <li>Design systems</li>
-            </ul>
-          </div>
         </div>
 
-        <div class="col-md-6 col-lg-4 reveal-up delay-2">
-          <div class="service-card service-card--featured">
-            <div class="sc-badge">Most popular</div>
-            <div class="sc-icon"><i class="bi bi-code-slash"></i></div>
-            <h3 class="sc-title">Web Development</h3>
-            <p class="sc-body">Performant, scalable front-end and back-end engineering with modern stacks and zero compromise.</p>
-            <ul class="sc-list">
-              <li>React / Next.js / Vue</li>
-              <li>Node.js / Python APIs</li>
-              <li>CMS &amp; e-commerce</li>
-            </ul>
-          </div>
-        </div>
+    </nav>
 
-        <div class="col-md-6 col-lg-4 reveal-up delay-3">
-          <div class="service-card">
-            <div class="sc-icon"><i class="bi bi-phone"></i></div>
-            <h3 class="sc-title">Mobile Apps</h3>
-            <p class="sc-body">Cross-platform native experiences on iOS and Android with fluid motion and silky performance.</p>
-            <ul class="sc-list">
-              <li>React Native / Flutter</li>
-              <li>App Store submission</li>
-              <li>Push &amp; analytics</li>
-            </ul>
-          </div>
-        </div>
+    <!-- ========================= -->
+    <!-- Hero -->
+    <!-- ========================= -->
 
-        <div class="col-md-6 col-lg-4 reveal-up delay-1">
-          <div class="service-card">
-            <div class="sc-icon"><i class="bi bi-graph-up-arrow"></i></div>
-            <h3 class="sc-title">Digital Strategy</h3>
-            <p class="sc-body">Competitive analysis, positioning, and roadmaps that connect design decisions to business outcomes.</p>
-            <ul class="sc-list">
-              <li>Brand positioning</li>
-              <li>Growth frameworks</li>
-              <li>Analytics &amp; reporting</li>
-            </ul>
-          </div>
-        </div>
+    <section id="home"
+        class="hero-section">
 
-        <div class="col-md-6 col-lg-4 reveal-up delay-2">
-          <div class="service-card">
-            <div class="sc-icon"><i class="bi bi-search"></i></div>
-            <h3 class="sc-title">SEO &amp; Performance</h3>
-            <p class="sc-body">Technical SEO, Core Web Vitals optimization, and content architecture that ranks and converts.</p>
-            <ul class="sc-list">
-              <li>Technical audits</li>
-              <li>On-page &amp; off-page SEO</li>
-              <li>Page speed optimization</li>
-            </ul>
-          </div>
-        </div>
+        <div class="container">
 
-        <div class="col-md-6 col-lg-4 reveal-up delay-3">
-          <div class="service-card">
-            <div class="sc-icon"><i class="bi bi-shield-check"></i></div>
-            <h3 class="sc-title">Maintenance &amp; Support</h3>
-            <p class="sc-body">Ongoing retainers with SLA guarantees, uptime monitoring, and feature iteration on your schedule.</p>
-            <ul class="sc-list">
-              <li>24/7 monitoring</li>
-              <li>Monthly sprints</li>
-              <li>Priority support</li>
-            </ul>
-          </div>
-        </div>
+            <div class="row align-items-center min-vh-100">
 
-      </div>
-    </div>
-  </section>
+                <div class="col-lg-6">
 
-  <!-- ========== FEATURES ========== -->
-  <section id="features" class="section-light" aria-label="Features">
-    <div class="container">
-      <div class="text-center mb-section reveal-up">
-        <p class="section-eyebrow">Why us</p>
-        <h2 class="section-title">Built for the way you work</h2>
-      </div>
-      <div class="row g-4 align-items-stretch">
+                    <span class="badge bg-primary mb-3">
+                        Premium Digital Solutions
+                    </span>
 
-        <!-- Feature highlight (large) -->
-        <div class="col-lg-6 reveal-left">
-          <div class="feature-big">
-            <div class="fb-icon"><i class="bi bi-rocket-takeoff-fill"></i></div>
-            <h3>Launch in weeks, not months</h3>
-            <p>Our sprint-based process means you see real results fast. We deliver a working prototype within two weeks of kickoff — no endless discovery phases.</p>
-            <div class="fb-metric">
-              <span class="fb-number">2 wk</span>
-              <span class="fb-label">to first prototype</span>
-            </div>
-          </div>
-        </div>
+                    <h1 class="display-3 fw-bold">
 
-        <!-- Feature list (right column) -->
-        <div class="col-lg-6">
-          <div class="row g-4 h-100">
-            <div class="col-12 reveal-right delay-1">
-              <div class="feature-small">
-                <div class="fs-icon"><i class="bi bi-eye-fill"></i></div>
-                <div>
-                  <h4>Radical transparency</h4>
-                  <p>Live project dashboards, weekly Loom updates, and a shared Slack channel. You're never in the dark.</p>
+                        Build Your
+
+                        <span id="typing-text"></span>
+
+                    </h1>
+
+                    <p class="lead mt-4">
+
+                        We create modern websites,
+                        scalable web applications,
+                        premium UI/UX designs,
+                        and digital experiences that help
+                        businesses grow faster.
+
+                    </p>
+
+                    <div class="mt-5">
+
+                        <a href="#contact"
+                            class="btn btn-primary btn-lg me-3">
+
+                            Get Started
+
+                        </a>
+
+                        <a href="#portfolio"
+                            class="btn btn-outline-light btn-lg">
+
+                            View Portfolio
+
+                        </a>
+
+                    </div>
+
                 </div>
-              </div>
-            </div>
-            <div class="col-12 reveal-right delay-2">
-              <div class="feature-small">
-                <div class="fs-icon"><i class="bi bi-people-fill"></i></div>
-                <div>
-                  <h4>Senior-only delivery</h4>
-                  <p>No bait-and-switch. The people you meet in the proposal are the people who build your product.</p>
+
+                <div class="col-lg-6 text-center">
+
+                    <div class="hero-glass-card">
+
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=900"
+                            class="img-fluid rounded-4"
+                            alt="Business">
+
+                    </div>
+
                 </div>
-              </div>
+
             </div>
-            <div class="col-12 reveal-right delay-3">
-              <div class="feature-small">
-                <div class="fs-icon"><i class="bi bi-lock-fill"></i></div>
-                <div>
-                  <h4>Your IP, always</h4>
-                  <p>Full source code handover on day one of completion. No vendor lock-in, ever.</p>
+
+        </div>
+
+    </section>
+
+    <!-- About section starts here -->
+         <!-- ========================================= -->
+    <!-- About Section -->
+    <!-- ========================================= -->
+
+    <section id="about" class="section-padding">
+
+        <div class="container">
+
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-6">
+
+                    <div class="about-image">
+
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900"
+                            class="img-fluid rounded-4 shadow-lg"
+                            alt="About">
+
+                    </div>
+
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <!-- Bottom row features -->
-        <div class="col-sm-6 col-lg-3 reveal-up delay-1">
-          <div class="feature-chip">
-            <i class="bi bi-palette2"></i>
-            <h5>Custom design tokens</h5>
-            <p>Every project gets a bespoke visual system, not a template skin.</p>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 reveal-up delay-2">
-          <div class="feature-chip">
-            <i class="bi bi-universal-access"></i>
-            <h5>WCAG 2.2 AA</h5>
-            <p>Accessibility is a baseline, not an afterthought or an add-on.</p>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 reveal-up delay-3">
-          <div class="feature-chip">
-            <i class="bi bi-lightning-fill"></i>
-            <h5>99+ Lighthouse score</h5>
-            <p>Performance-optimized output, validated with real-world testing.</p>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-3 reveal-up delay-4">
-          <div class="feature-chip">
-            <i class="bi bi-arrow-repeat"></i>
-            <h5>Unlimited revisions</h5>
-            <p>We iterate until it's right. Our satisfaction guarantee is real.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+                <div class="col-lg-6">
 
-  <!-- ========== PORTFOLIO ========== -->
-  <section id="portfolio" class="section-dark" aria-label="Portfolio">
-    <div class="container">
-      <div class="text-center mb-section reveal-up">
-        <p class="section-eyebrow">Selected work</p>
-        <h2 class="section-title light">Projects we're proud of</h2>
-      </div>
+                    <span class="section-subtitle">
+                        About Us
+                    </span>
 
-      <!-- Filter buttons -->
-      <div class="portfolio-filters text-center mb-5 reveal-up delay-1">
-        <button class="pf-btn active" data-filter="all">All</button>
-        <button class="pf-btn" data-filter="web">Web</button>
-        <button class="pf-btn" data-filter="mobile">Mobile</button>
-        <button class="pf-btn" data-filter="brand">Brand</button>
-      </div>
+                    <h2 class="section-title mt-3">
+                        We Build Digital Products That Drive Business Growth
+                    </h2>
 
-      <div class="row g-4" id="portfolioGrid">
+                    <p class="mt-4">
 
-        <div class="col-md-6 col-lg-4 portfolio-item reveal-up delay-1" data-category="web">
-          <div class="portfolio-card">
-            <div class="pc-image" style="--pc-hue: 240deg;">
-              <div class="pc-mockup"><i class="bi bi-laptop"></i></div>
-            </div>
-            <div class="pc-content">
-              <span class="pc-tag">Web</span>
-              <h4 class="pc-title">Arkon Finance Dashboard</h4>
-              <p class="pc-body">Real-time analytics platform for a Series-B fintech startup. Reduced user churn by 34%.</p>
-              <a href="#contact" class="pc-link">View case study <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
+                        Our experienced team specializes in premium web
+                        development, UI/UX design, branding, cloud solutions,
+                        and scalable applications using the latest
+                        technologies.
 
-        <div class="col-md-6 col-lg-4 portfolio-item reveal-up delay-2" data-category="mobile">
-          <div class="portfolio-card">
-            <div class="pc-image" style="--pc-hue: 160deg;">
-              <div class="pc-mockup"><i class="bi bi-phone"></i></div>
-            </div>
-            <div class="pc-content">
-              <span class="pc-tag">Mobile</span>
-              <h4 class="pc-title">Verdure Wellness App</h4>
-              <p class="pc-body">iOS &amp; Android app for a health startup. 50k downloads in the first 60 days.</p>
-              <a href="#contact" class="pc-link">View case study <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
+                    </p>
 
-        <div class="col-md-6 col-lg-4 portfolio-item reveal-up delay-3" data-category="brand">
-          <div class="portfolio-card">
-            <div class="pc-image" style="--pc-hue: 30deg;">
-              <div class="pc-mockup"><i class="bi bi-brush"></i></div>
-            </div>
-            <div class="pc-content">
-              <span class="pc-tag">Brand</span>
-              <h4 class="pc-title">Nova Collective Identity</h4>
-              <p class="pc-body">Full brand system for a creative agency — logo, type, color, and guidelines.</p>
-              <a href="#contact" class="pc-link">View case study <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
+                    <div class="row mt-4">
 
-        <div class="col-md-6 col-lg-4 portfolio-item reveal-up delay-1" data-category="web">
-          <div class="portfolio-card">
-            <div class="pc-image" style="--pc-hue: 280deg;">
-              <div class="pc-mockup"><i class="bi bi-cart3"></i></div>
-            </div>
-            <div class="pc-content">
-              <span class="pc-tag">Web</span>
-              <h4 class="pc-title">Moiré E-Commerce Store</h4>
-              <p class="pc-body">Headless commerce platform with 3D product viewer. $2M in sales in 3 months.</p>
-              <a href="#contact" class="pc-link">View case study <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
+                        <div class="col-md-6 mb-3">
 
-        <div class="col-md-6 col-lg-4 portfolio-item reveal-up delay-2" data-category="mobile">
-          <div class="portfolio-card">
-            <div class="pc-image" style="--pc-hue: 190deg;">
-              <div class="pc-mockup"><i class="bi bi-map"></i></div>
-            </div>
-            <div class="pc-content">
-              <span class="pc-tag">Mobile</span>
-              <h4 class="pc-title">Waypoint Travel Companion</h4>
-              <p class="pc-body">AI-powered travel app with offline maps and itinerary generation. Featured by Apple.</p>
-              <a href="#contact" class="pc-link">View case study <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
+                            <div class="glass-box p-4">
 
-        <div class="col-md-6 col-lg-4 portfolio-item reveal-up delay-3" data-category="web brand">
-          <div class="portfolio-card">
-            <div class="pc-image" style="--pc-hue: 340deg;">
-              <div class="pc-mockup"><i class="bi bi-building"></i></div>
-            </div>
-            <div class="pc-content">
-              <span class="pc-tag">Brand + Web</span>
-              <h4 class="pc-title">Crestline Real Estate</h4>
-              <p class="pc-body">Luxury property platform with VR tour integration. 3× increase in qualified leads.</p>
-              <a href="#contact" class="pc-link">View case study <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
+                                <i class="bi bi-award fs-2 text-primary"></i>
 
-      </div>
-    </div>
-  </section>
+                                <h5 class="mt-3">
+                                    15+ Years
+                                </h5>
 
-  <!-- ========== TESTIMONIALS ========== -->
-  <section id="testimonials" class="section-light" aria-label="Testimonials">
-    <div class="container">
-      <div class="text-center mb-section reveal-up">
-        <p class="section-eyebrow">Social proof</p>
-        <h2 class="section-title">Words from the people who matter</h2>
-      </div>
-      <div class="row g-4">
+                                <p>
+                                    Industry Experience
+                                </p>
 
-        <div class="col-md-6 col-lg-4 reveal-up delay-1">
-          <div class="testimonial-card">
-            <div class="tc-stars" aria-label="5 stars">
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-            </div>
-            <p class="tc-quote">"Luminary didn't just build what we asked for — they challenged our assumptions and delivered something far better. Our conversion rate went up 60% in the first month."</p>
-            <div class="tc-author">
-              <div class="tc-avatar tc-avatar--a">SR</div>
-              <div>
-                <strong>Sarah Reid</strong>
-                <span>CEO, Arkon Finance</span>
-              </div>
-            </div>
-          </div>
-        </div>
+                            </div>
 
-        <div class="col-md-6 col-lg-4 reveal-up delay-2">
-          <div class="testimonial-card testimonial-card--featured">
-            <div class="tc-stars" aria-label="5 stars">
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-            </div>
-            <p class="tc-quote">"The quality of thinking they bring is unlike any agency I've worked with. Every decision was intentional. The app was featured by Apple six weeks after launch."</p>
-            <div class="tc-author">
-              <div class="tc-avatar tc-avatar--b">MK</div>
-              <div>
-                <strong>Marcus Kim</strong>
-                <span>Founder, Waypoint</span>
-              </div>
-            </div>
-          </div>
-        </div>
+                        </div>
 
-        <div class="col-md-6 col-lg-4 reveal-up delay-3">
-          <div class="testimonial-card">
-            <div class="tc-stars" aria-label="5 stars">
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-            </div>
-            <p class="tc-quote">"We'd been through two other agencies before Luminary. Night and day. They communicate proactively, hit every deadline, and actually care about the outcome."</p>
-            <div class="tc-author">
-              <div class="tc-avatar tc-avatar--c">JL</div>
-              <div>
-                <strong>Julia Larsson</strong>
-                <span>Head of Digital, Crestline</span>
-              </div>
-            </div>
-          </div>
-        </div>
+                        <div class="col-md-6 mb-3">
 
-      </div>
-    </div>
-  </section>
+                            <div class="glass-box p-4">
 
-  <!-- ========== PRICING ========== -->
-  <section id="pricing" class="section-dark" aria-label="Pricing">
-    <div class="container">
-      <div class="text-center mb-section reveal-up">
-        <p class="section-eyebrow">Investment</p>
-        <h2 class="section-title light">Transparent pricing, no surprises</h2>
-        <p class="section-sub">All plans include our process, our team, and our guarantee.</p>
-      </div>
+                                <i class="bi bi-lightbulb fs-2 text-warning"></i>
 
-      <!-- Billing toggle -->
-      <div class="billing-toggle text-center mb-5 reveal-up delay-1">
-        <span class="bt-label">Monthly</span>
-        <label class="bt-switch" aria-label="Toggle annual billing">
-          <input type="checkbox" id="billingToggle" />
-          <span class="bt-slider"></span>
-        </label>
-        <span class="bt-label">Annual <span class="bt-save">Save 20%</span></span>
-      </div>
+                                <h5 class="mt-3">
+                                    Innovation
+                                </h5>
 
-      <div class="row g-4 justify-content-center">
+                                <p>
+                                    Modern Technologies
+                                </p>
 
-        <!-- Starter -->
-        <div class="col-md-6 col-lg-4 reveal-up delay-1">
-          <div class="pricing-card">
-            <div class="prc-tier">Starter</div>
-            <div class="prc-price">
-              <span class="prc-currency">$</span>
-              <span class="prc-amount" data-monthly="2500" data-annual="2000">2,500</span>
-              <span class="prc-period">/mo</span>
-            </div>
-            <p class="prc-desc">For startups validating their idea with a polished MVP.</p>
-            <ul class="prc-features">
-              <li><i class="bi bi-check2"></i> Up to 8 pages</li>
-              <li><i class="bi bi-check2"></i> Responsive design</li>
-              <li><i class="bi bi-check2"></i> 1 revision round</li>
-              <li><i class="bi bi-check2"></i> Basic SEO setup</li>
-              <li><i class="bi bi-check2"></i> 30-day support</li>
-              <li class="prc-na"><i class="bi bi-x"></i> Custom design system</li>
-              <li class="prc-na"><i class="bi bi-x"></i> API integration</li>
-            </ul>
-            <a href="#contact" class="btn btn-outline-custom w-100">Get started</a>
-          </div>
-        </div>
+                            </div>
 
-        <!-- Growth (featured) -->
-        <div class="col-md-6 col-lg-4 reveal-up delay-2">
-          <div class="pricing-card pricing-card--featured">
-            <div class="prc-popular">Most popular</div>
-            <div class="prc-tier">Growth</div>
-            <div class="prc-price">
-              <span class="prc-currency">$</span>
-              <span class="prc-amount" data-monthly="5500" data-annual="4400">5,500</span>
-              <span class="prc-period">/mo</span>
-            </div>
-            <p class="prc-desc">For scaling businesses that need full-stack delivery.</p>
-            <ul class="prc-features">
-              <li><i class="bi bi-check2"></i> Unlimited pages</li>
-              <li><i class="bi bi-check2"></i> Custom design system</li>
-              <li><i class="bi bi-check2"></i> Unlimited revisions</li>
-              <li><i class="bi bi-check2"></i> Full SEO &amp; analytics</li>
-              <li><i class="bi bi-check2"></i> 90-day support</li>
-              <li><i class="bi bi-check2"></i> API integrations</li>
-              <li class="prc-na"><i class="bi bi-x"></i> Dedicated PM</li>
-            </ul>
-            <a href="#contact" class="btn btn-primary-custom w-100">Get started</a>
-          </div>
-        </div>
+                        </div>
 
-        <!-- Enterprise -->
-        <div class="col-md-6 col-lg-4 reveal-up delay-3">
-          <div class="pricing-card">
-            <div class="prc-tier">Enterprise</div>
-            <div class="prc-price">
-              <span class="prc-custom">Custom</span>
-            </div>
-            <p class="prc-desc">For large teams with complex requirements and compliance needs.</p>
-            <ul class="prc-features">
-              <li><i class="bi bi-check2"></i> Everything in Growth</li>
-              <li><i class="bi bi-check2"></i> Dedicated PM</li>
-              <li><i class="bi bi-check2"></i> SLA guarantee</li>
-              <li><i class="bi bi-check2"></i> Security audits</li>
-              <li><i class="bi bi-check2"></i> 12-month retainer</li>
-              <li><i class="bi bi-check2"></i> White-glove onboarding</li>
-              <li><i class="bi bi-check2"></i> Custom contracts</li>
-            </ul>
-            <a href="#contact" class="btn btn-outline-custom w-100">Talk to us</a>
-          </div>
-        </div>
+                    </div>
 
-      </div>
-    </div>
-  </section>
+                    <a href="#services"
+                        class="btn btn-primary btn-lg mt-4">
 
-  <!-- ========== FAQ ========== -->
-  <section id="faq" class="section-light" aria-label="FAQ">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <div class="text-center mb-section reveal-up">
-            <p class="section-eyebrow">Questions</p>
-            <h2 class="section-title">Frequently asked</h2>
-          </div>
-          <div class="accordion faq-accordion reveal-up delay-1" id="faqAccordion">
+                        Learn More
 
-            <div class="faq-item">
-              <h3>
-                <button class="faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
-                  How does the process work?
-                  <i class="bi bi-plus-lg faq-icon"></i>
-                </button>
-              </h3>
-              <div id="faq1" class="collapse show" data-bs-parent="#faqAccordion">
-                <div class="faq-body">We start with a discovery call to understand your goals, audience, and constraints. From there we produce a scoped proposal, kick off with a 2-week design sprint, and then build in iterative cycles with your team providing feedback throughout.</div>
-              </div>
-            </div>
+                    </a>
 
-            <div class="faq-item">
-              <h3>
-                <button class="faq-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
-                  What's your typical project timeline?
-                  <i class="bi bi-plus-lg faq-icon"></i>
-                </button>
-              </h3>
-              <div id="faq2" class="collapse" data-bs-parent="#faqAccordion">
-                <div class="faq-body">A standard website project runs 6–10 weeks from kickoff to launch. Complex web apps or mobile projects can be 12–20 weeks. We always provide a detailed timeline in the proposal so there are no surprises.</div>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <h3>
-                <button class="faq-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
-                  Do you work with early-stage startups?
-                  <i class="bi bi-plus-lg faq-icon"></i>
-                </button>
-              </h3>
-              <div id="faq3" class="collapse" data-bs-parent="#faqAccordion">
-                <div class="faq-body">Yes. Our Starter plan is specifically designed for startups that need to move fast and validate quickly. We've worked with pre-seed teams all the way through to Series-C companies — the process adapts to your stage.</div>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <h3>
-                <button class="faq-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
-                  Who owns the code and designs?
-                  <i class="bi bi-plus-lg faq-icon"></i>
-                </button>
-              </h3>
-              <div id="faq4" class="collapse" data-bs-parent="#faqAccordion">
-                <div class="faq-body">You do — 100%. We hand over a full Git repository, design files (Figma), and all associated assets at the end of the project. We don't retain any rights and there's no recurring license fee for anything we build.</div>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <h3>
-                <button class="faq-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
-                  Can I hire you for ongoing work after launch?
-                  <i class="bi bi-plus-lg faq-icon"></i>
-                </button>
-              </h3>
-              <div id="faq5" class="collapse" data-bs-parent="#faqAccordion">
-                <div class="faq-body">Absolutely. Many of our clients move onto a monthly retainer after launch for continuous improvement, new feature development, and priority support. Retainer clients get dedicated capacity and same-day response times.</div>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <h3>
-                <button class="faq-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false" aria-controls="faq6">
-                  What's included in the satisfaction guarantee?
-                  <i class="bi bi-plus-lg faq-icon"></i>
-                </button>
-              </h3>
-              <div id="faq6" class="collapse" data-bs-parent="#faqAccordion">
-                <div class="faq-body">If we can't resolve your concerns after two revision rounds, we'll refund your most recent milestone payment — no questions asked. In six years we've only had to invoke this once, and we're proud of that.</div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== CONTACT ========== -->
-  <section id="contact" class="section-dark contact-section" aria-label="Contact">
-    <div class="container">
-      <div class="row g-5 align-items-center">
-        <div class="col-lg-5 reveal-left">
-          <p class="section-eyebrow">Get in touch</p>
-          <h2 class="section-title light">Ready to build something great?</h2>
-          <p class="section-body" style="color: var(--color-muted);">Tell us about your project and we'll get back to you within one business day. No sales pitch, just a real conversation.</p>
-          <div class="contact-info">
-            <div class="ci-item">
-              <i class="bi bi-envelope-fill"></i>
-              <span>hello@luminarystudio.io</span>
-            </div>
-            <div class="ci-item">
-              <i class="bi bi-telephone-fill"></i>
-              <span>+1 (415) 555-0192</span>
-            </div>
-            <div class="ci-item">
-              <i class="bi bi-geo-alt-fill"></i>
-              <span>San Francisco, CA · Remote-first</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-7 reveal-right">
-          <form id="contactForm" class="contact-form" novalidate aria-label="Contact form">
-            <div class="row g-3">
-              <div class="col-sm-6">
-                <label for="cfName" class="form-label">Full name <span class="required">*</span></label>
-                <input type="text" id="cfName" name="name" class="form-control cf-input" placeholder="Alex Johnson" required minlength="2" />
-                <div class="invalid-feedback">Please enter your name (at least 2 characters).</div>
-              </div>
-              <div class="col-sm-6">
-                <label for="cfEmail" class="form-label">Email <span class="required">*</span></label>
-                <input type="email" id="cfEmail" name="email" class="form-control cf-input" placeholder="alex@company.com" required />
-                <div class="invalid-feedback">Please enter a valid email address.</div>
-              </div>
-              <div class="col-12">
-                <label for="cfCompany" class="form-label">Company</label>
-                <input type="text" id="cfCompany" name="company" class="form-control cf-input" placeholder="Your company name" />
-              </div>
-              <div class="col-sm-6">
-                <label for="cfBudget" class="form-label">Budget range <span class="required">*</span></label>
-                <select id="cfBudget" name="budget" class="form-select cf-input" required>
-                  <option value="" disabled selected>Select range</option>
-                  <option value="<5k">Under $5,000</option>
-                  <option value="5-15k">$5,000 – $15,000</option>
-                  <option value="15-50k">$15,000 – $50,000</option>
-                  <option value="50k+">$50,000+</option>
-                </select>
-                <div class="invalid-feedback">Please select a budget range.</div>
-              </div>
-              <div class="col-sm-6">
-                <label for="cfService" class="form-label">Service needed <span class="required">*</span></label>
-                <select id="cfService" name="service" class="form-select cf-input" required>
-                  <option value="" disabled selected>Select service</option>
-                  <option value="design">UI/UX Design</option>
-                  <option value="web">Web Development</option>
-                  <option value="mobile">Mobile App</option>
-                  <option value="strategy">Digital Strategy</option>
-                  <option value="other">Other</option>
-                </select>
-                <div class="invalid-feedback">Please select a service.</div>
-              </div>
-              <div class="col-12">
-                <label for="cfMessage" class="form-label">Tell us about your project <span class="required">*</span></label>
-                <textarea id="cfMessage" name="message" class="form-control cf-input" rows="4" placeholder="Describe your goals, timeline, and anything else that's relevant..." required minlength="20"></textarea>
-                <div class="invalid-feedback">Please describe your project (at least 20 characters).</div>
-              </div>
-              <div class="col-12">
-                <button type="submit" class="btn btn-primary-custom btn-submit w-100" id="submitBtn">
-                  <span class="btn-text">Send message</span>
-                  <span class="btn-loading d-none"><i class="bi bi-arrow-repeat spin"></i> Sending…</span>
-                </button>
-              </div>
-              <div class="col-12">
-                <div id="formSuccess" class="form-success d-none" role="alert">
-                  <i class="bi bi-check-circle-fill"></i>
-                  <strong>Message sent!</strong> We'll be in touch within one business day.
                 </div>
-              </div>
+
             </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ========== FOOTER ========== -->
-  <footer class="site-footer" role="contentinfo">
+        </div>
+
+    </section>
+
+    <!-- ========================================= -->
+    <!-- Services -->
+    <!-- ========================================= -->
+
+    <section id="services" class="section-padding bg-light">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <span class="section-subtitle">
+                    Our Services
+                </span>
+
+                <h2 class="section-title mt-3">
+                    Premium Services For Your Business
+                </h2>
+
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="service-card">
+
+                        <i class="bi bi-code-slash display-4"></i>
+
+                        <h4 class="mt-4">
+                            Web Development
+                        </h4>
+
+                        <p>
+
+                            Responsive business websites,
+                            custom portals,
+                            enterprise dashboards,
+                            and SaaS products.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="service-card">
+
+                        <i class="bi bi-phone display-4"></i>
+
+                        <h4 class="mt-4">
+                            App Development
+                        </h4>
+
+                        <p>
+
+                            Android, iOS and Flutter
+                            applications with premium
+                            performance.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="service-card">
+
+                        <i class="bi bi-palette display-4"></i>
+
+                        <h4 class="mt-4">
+                            UI / UX Design
+                        </h4>
+
+                        <p>
+
+                            Beautiful interfaces,
+                            modern layouts,
+                            wireframes,
+                            and user-focused experiences.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="service-card">
+
+                        <i class="bi bi-cloud display-4"></i>
+
+                        <h4 class="mt-4">
+                            Cloud Solutions
+                        </h4>
+
+                        <p>
+
+                            AWS,
+                            Azure,
+                            Google Cloud,
+                            DevOps automation
+                            and deployment.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="service-card">
+
+                        <i class="bi bi-shield-lock display-4"></i>
+
+                        <h4 class="mt-4">
+                            Cyber Security
+                        </h4>
+
+                        <p>
+
+                            Infrastructure protection,
+                            penetration testing,
+                            vulnerability assessment
+                            and monitoring.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="service-card">
+
+                        <i class="bi bi-graph-up-arrow display-4"></i>
+
+                        <h4 class="mt-4">
+                            Digital Marketing
+                        </h4>
+
+                        <p>
+
+                            SEO,
+                            branding,
+                            social media marketing,
+                            analytics,
+                            and campaigns.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================================= -->
+    <!-- Features -->
+    <!-- ========================================= -->
+
+    <section id="features" class="section-padding">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <span class="section-subtitle">
+                    Features
+                </span>
+
+                <h2 class="section-title mt-3">
+
+                    Why Choose NovaTech?
+
+                </h2>
+
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="feature-card">
+
+                        <i class="bi bi-lightning-charge-fill"></i>
+
+                        <h5>
+                            Fast Performance
+                        </h5>
+
+                        <p>
+
+                            Optimized websites
+                            with blazing fast loading.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="feature-card">
+
+                        <i class="bi bi-phone-fill"></i>
+
+                        <h5>
+
+                            Responsive
+
+                        </h5>
+
+                        <p>
+
+                            Looks perfect
+                            on every device.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="feature-card">
+
+                        <i class="bi bi-lock-fill"></i>
+
+                        <h5>
+
+                            Secure
+
+                        </h5>
+
+                        <p>
+
+                            Enterprise level
+                            security standards.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="feature-card">
+
+                        <i class="bi bi-headset"></i>
+
+                        <h5>
+
+                            24×7 Support
+
+                        </h5>
+
+                        <p>
+
+                            Dedicated support
+                            whenever you need.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Statistics Section Starts Next -->
+     <!-- ========================================= -->
+<!-- Statistics Section -->
+<!-- ========================================= -->
+
+<section id="statistics" class="section-padding bg-primary text-white">
+
     <div class="container">
-      <div class="row g-4 footer-top">
-        <div class="col-lg-4">
-          <a class="footer-brand" href="#hero">
-            <span class="brand-mark">◆</span> Luminary
-          </a>
-          <p class="footer-tagline">Digital craft at scale.<br />Made with intention, built to last.</p>
-          <div class="social-links" aria-label="Social media links">
-            <a href="#" aria-label="Twitter/X" class="social-link"><i class="bi bi-twitter-x"></i></a>
-            <a href="#" aria-label="LinkedIn" class="social-link"><i class="bi bi-linkedin"></i></a>
-            <a href="#" aria-label="Dribbble" class="social-link"><i class="bi bi-dribbble"></i></a>
-            <a href="#" aria-label="GitHub" class="social-link"><i class="bi bi-github"></i></a>
-            <a href="#" aria-label="Instagram" class="social-link"><i class="bi bi-instagram"></i></a>
-          </div>
-        </div>
-        <div class="col-6 col-lg-2 offset-lg-1">
-          <h6 class="footer-heading">Studio</h6>
-          <ul class="footer-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Work</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-          </ul>
-        </div>
-        <div class="col-6 col-lg-2">
-          <h6 class="footer-heading">Resources</h6>
-          <ul class="footer-links">
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Case studies</a></li>
-            <li><a href="#">Process guide</a></li>
-            <li><a href="#faq">FAQ</a></li>
-          </ul>
-        </div>
-        <div class="col-6 col-lg-2">
-          <h6 class="footer-heading">Legal</h6>
-          <ul class="footer-links">
-            <li><a href="#">Privacy policy</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Cookie policy</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; <span id="year"></span> Luminary Studio LLC. All rights reserved.</p>
-        <a href="#hero" class="back-to-top" aria-label="Back to top">
-          <i class="bi bi-arrow-up"></i>
-        </a>
-      </div>
-    </div>
-  </footer>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Custom JS -->
-  <script src="script.js"></script>
+        <div class="row text-center g-4">
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="counter-box">
+
+                    <h2 class="counter" data-target="150">0</h2>
+
+                    <p>Projects Completed</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="counter-box">
+
+                    <h2 class="counter" data-target="120">0</h2>
+
+                    <p>Happy Clients</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="counter-box">
+
+                    <h2 class="counter" data-target="35">0</h2>
+
+                    <p>Team Members</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="counter-box">
+
+                    <h2 class="counter" data-target="15">0</h2>
+
+                    <p>Years Experience</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- Portfolio -->
+<!-- ========================================= -->
+
+<section id="portfolio" class="section-padding">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-subtitle">
+                Portfolio
+            </span>
+
+            <h2 class="section-title mt-3">
+                Our Recent Projects
+            </h2>
+
+        </div>
+
+        <div class="portfolio-filter text-center mb-5">
+
+            <button class="btn btn-primary active filter-btn"
+                data-filter="all">
+
+                All
+
+            </button>
+
+            <button class="btn btn-outline-primary filter-btn"
+                data-filter="web">
+
+                Web
+
+            </button>
+
+            <button class="btn btn-outline-primary filter-btn"
+                data-filter="app">
+
+                Apps
+
+            </button>
+
+            <button class="btn btn-outline-primary filter-btn"
+                data-filter="design">
+
+                Design
+
+            </button>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-lg-4 col-md-6 portfolio-item web">
+
+                <div class="portfolio-card">
+
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=900"
+                        class="img-fluid"
+                        alt="Project">
+
+                    <div class="portfolio-content">
+
+                        <h5>Business Website</h5>
+
+                        <p>HTML • Bootstrap • JS</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item app">
+
+                <div class="portfolio-card">
+
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=900"
+                        class="img-fluid"
+                        alt="Project">
+
+                    <div class="portfolio-content">
+
+                        <h5>Mobile Application</h5>
+
+                        <p>Flutter Development</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item design">
+
+                <div class="portfolio-card">
+
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900"
+                        class="img-fluid"
+                        alt="Project">
+
+                    <div class="portfolio-content">
+
+                        <h5>UI / UX Design</h5>
+
+                        <p>Modern Dashboard</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item web">
+
+                <div class="portfolio-card">
+
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=900"
+                        class="img-fluid"
+                        alt="Project">
+
+                    <div class="portfolio-content">
+
+                        <h5>Corporate Website</h5>
+
+                        <p>Premium Responsive Design</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item app">
+
+                <div class="portfolio-card">
+
+                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=900"
+                        class="img-fluid"
+                        alt="Project">
+
+                    <div class="portfolio-content">
+
+                        <h5>Finance App</h5>
+
+                        <p>Android & iOS</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item design">
+
+                <div class="portfolio-card">
+
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900"
+                        class="img-fluid"
+                        alt="Project">
+
+                    <div class="portfolio-content">
+
+                        <h5>Brand Identity</h5>
+
+                        <p>Creative Design</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- Team -->
+<!-- ========================================= -->
+
+<section id="team" class="section-padding bg-light">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-subtitle">
+
+                Team
+
+            </span>
+
+            <h2 class="section-title mt-3">
+
+                Meet Our Experts
+
+            </h2>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="team-card text-center">
+
+                    <img src="https://randomuser.me/api/portraits/men/11.jpg"
+                        class="img-fluid rounded-circle mb-3"
+                        alt="Team">
+
+                    <h5>John Smith</h5>
+
+                    <p>CEO</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="team-card text-center">
+
+                    <img src="https://randomuser.me/api/portraits/women/21.jpg"
+                        class="img-fluid rounded-circle mb-3"
+                        alt="Team">
+
+                    <h5>Emma Wilson</h5>
+
+                    <p>UI / UX Designer</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="team-card text-center">
+
+                    <img src="https://randomuser.me/api/portraits/men/41.jpg"
+                        class="img-fluid rounded-circle mb-3"
+                        alt="Team">
+
+                    <h5>Michael Lee</h5>
+
+                    <p>Full Stack Developer</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="team-card text-center">
+
+                    <img src="https://randomuser.me/api/portraits/women/50.jpg"
+                        class="img-fluid rounded-circle mb-3"
+                        alt="Team">
+
+                    <h5>Sophia Brown</h5>
+
+                    <p>Marketing Head</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Testimonials Section Starts Next -->
+ <!-- ========================================= -->
+<!-- Testimonials -->
+<!-- ========================================= -->
+
+<section id="testimonials" class="section-padding">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-subtitle">Testimonials</span>
+
+            <h2 class="section-title mt-3">
+                What Our Clients Say
+            </h2>
+
+        </div>
+
+        <div id="testimonialCarousel"
+            class="carousel slide"
+            data-bs-ride="carousel">
+
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+
+                    <div class="testimonial-card text-center">
+
+                        <img src="https://randomuser.me/api/portraits/men/31.jpg"
+                            class="rounded-circle mb-3"
+                            width="90"
+                            alt="Client">
+
+                        <h5>David Johnson</h5>
+
+                        <p class="text-warning">
+                            ★★★★★
+                        </p>
+
+                        <p>
+
+                            NovaTech completely transformed our online
+                            business with a beautiful and high-performing
+                            website.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="carousel-item">
+
+                    <div class="testimonial-card text-center">
+
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg"
+                            class="rounded-circle mb-3"
+                            width="90"
+                            alt="Client">
+
+                        <h5>Emily Clark</h5>
+
+                        <p class="text-warning">
+                            ★★★★★
+                        </p>
+
+                        <p>
+
+                            Amazing UI/UX and excellent support throughout
+                            the project.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="carousel-item">
+
+                    <div class="testimonial-card text-center">
+
+                        <img src="https://randomuser.me/api/portraits/men/52.jpg"
+                            class="rounded-circle mb-3"
+                            width="90"
+                            alt="Client">
+
+                        <h5>James Walker</h5>
+
+                        <p class="text-warning">
+                            ★★★★★
+                        </p>
+
+                        <p>
+
+                            Highly recommended for startups looking for
+                            premium web solutions.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- Pricing -->
+<!-- ========================================= -->
+
+<section id="pricing" class="section-padding bg-light">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-subtitle">
+
+                Pricing
+
+            </span>
+
+            <h2 class="section-title mt-3">
+
+                Choose Your Plan
+
+            </h2>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-lg-4">
+
+                <div class="pricing-card">
+
+                    <h3>Starter</h3>
+
+                    <h1>$49</h1>
+
+                    <ul>
+
+                        <li>Responsive Website</li>
+                        <li>5 Pages</li>
+                        <li>Email Support</li>
+
+                    </ul>
+
+                    <a href="#contact"
+                        class="btn btn-primary w-100">
+
+                        Choose Plan
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4">
+
+                <div class="pricing-card featured">
+
+                    <span class="badge bg-danger">
+
+                        Popular
+
+                    </span>
+
+                    <h3>Professional</h3>
+
+                    <h1>$149</h1>
+
+                    <ul>
+
+                        <li>15 Pages</li>
+                        <li>Admin Panel</li>
+                        <li>Premium Support</li>
+
+                    </ul>
+
+                    <a href="#contact"
+                        class="btn btn-primary w-100">
+
+                        Choose Plan
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4">
+
+                <div class="pricing-card">
+
+                    <h3>Enterprise</h3>
+
+                    <h1>$399</h1>
+
+                    <ul>
+
+                        <li>Unlimited Pages</li>
+                        <li>Cloud Hosting</li>
+                        <li>24×7 Support</li>
+
+                    </ul>
+
+                    <a href="#contact"
+                        class="btn btn-primary w-100">
+
+                        Choose Plan
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- FAQ -->
+<!-- ========================================= -->
+
+<section id="faq" class="section-padding">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-subtitle">
+
+                FAQ
+
+            </span>
+
+            <h2 class="section-title mt-3">
+
+                Frequently Asked Questions
+
+            </h2>
+
+        </div>
+
+        <div class="accordion"
+            id="faqAccordion">
+
+            <div class="accordion-item">
+
+                <h2 class="accordion-header">
+
+                    <button class="accordion-button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#faq1">
+
+                        Do you build custom websites?
+
+                    </button>
+
+                </h2>
+
+                <div id="faq1"
+                    class="accordion-collapse collapse show"
+                    data-bs-parent="#faqAccordion">
+
+                    <div class="accordion-body">
+
+                        Yes, we build fully custom business websites.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="accordion-item">
+
+                <h2 class="accordion-header">
+
+                    <button class="accordion-button collapsed"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#faq2">
+
+                        Do you provide maintenance?
+
+                    </button>
+
+                </h2>
+
+                <div id="faq2"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#faqAccordion">
+
+                    <div class="accordion-body">
+
+                        Yes. We provide long-term support and maintenance.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Contact Section Starts Next -->
+     <!-- ========================================= -->
+    <!-- Contact Section -->
+    <!-- ========================================= -->
+
+    <section id="contact" class="section-padding bg-light">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <span class="section-subtitle">
+                    Contact Us
+                </span>
+
+                <h2 class="section-title mt-3">
+                    Let's Build Something Great Together
+                </h2>
+
+                <p class="text-muted">
+                    Have a project in mind? We'd love to hear from you.
+                </p>
+
+            </div>
+
+            <div class="row g-5">
+
+                <div class="col-lg-5">
+
+                    <div class="contact-info">
+
+                        <div class="contact-item mb-4">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <div>
+                                <h5>Address</h5>
+                                <p>New York, United States</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item mb-4">
+                            <i class="bi bi-envelope-fill"></i>
+                            <div>
+                                <h5>Email</h5>
+                                <p>info@novatech.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item mb-4">
+                            <i class="bi bi-telephone-fill"></i>
+                            <div>
+                                <h5>Phone</h5>
+                                <p>+1 234 567 890</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="bi bi-clock-fill"></i>
+                            <div>
+                                <h5>Working Hours</h5>
+                                <p>Monday - Friday : 9:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-7">
+
+                    <form id="contactForm">
+
+                        <div class="row">
+
+                            <div class="col-md-6 mb-3">
+
+                                <input type="text"
+                                    class="form-control"
+                                    id="name"
+                                    placeholder="Your Name"
+                                    required>
+
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+
+                                <input type="email"
+                                    class="form-control"
+                                    id="email"
+                                    placeholder="Email Address"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <input type="text"
+                                class="form-control"
+                                id="subject"
+                                placeholder="Subject"
+                                required>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <textarea class="form-control"
+                                rows="6"
+                                id="message"
+                                placeholder="Your Message"
+                                required></textarea>
+
+                        </div>
+
+                        <button class="btn btn-primary btn-lg">
+
+                            Send Message
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================================= -->
+    <!-- Google Map Placeholder -->
+    <!-- ========================================= -->
+
+    <section id="map">
+
+        <div class="container-fluid p-0">
+
+            <div class="map-placeholder">
+
+                <h3>
+                    Google Map Placeholder
+                </h3>
+
+                <p>
+                    Replace this section with your Google Maps iframe.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================================= -->
+    <!-- Newsletter -->
+    <!-- ========================================= -->
+
+    <section id="newsletter" class="section-padding">
+
+        <div class="container">
+
+            <div class="newsletter-box text-center">
+
+                <h2>
+                    Subscribe To Our Newsletter
+                </h2>
+
+                <p class="mb-4">
+
+                    Get the latest news, updates and offers directly in your inbox.
+
+                </p>
+
+                <form class="row justify-content-center">
+
+                    <div class="col-md-6">
+
+                        <input type="email"
+                            class="form-control form-control-lg"
+                            placeholder="Enter Your Email">
+
+                    </div>
+
+                    <div class="col-md-2 mt-3 mt-md-0">
+
+                        <button class="btn btn-primary btn-lg w-100">
+
+                            Subscribe
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================================= -->
+    <!-- Footer -->
+    <!-- ========================================= -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="row g-5">
+
+                <div class="col-lg-4">
+
+                    <h3>NovaTech</h3>
+
+                    <p>
+
+                        We create premium websites,
+                        web applications,
+                        branding,
+                        UI/UX,
+                        and digital experiences.
+
+                    </p>
+
+                </div>
+
+                <div class="col-lg-2">
+
+                    <h5>Company</h5>
+
+                    <ul class="list-unstyled">
+
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+
+                    </ul>
+
+                </div>
+
+                <div class="col-lg-3">
+
+                    <h5>Services</h5>
+
+                    <ul class="list-unstyled">
+
+                        <li>Web Development</li>
+                        <li>App Development</li>
+                        <li>UI / UX Design</li>
+                        <li>Cloud Solutions</li>
+
+                    </ul>
+
+                </div>
+
+                <div class="col-lg-3">
+
+                    <h5>Follow Us</h5>
+
+                    <div class="social-links">
+
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="text-center">
+
+                <p class="mb-0">
+
+                    © 2026 NovaTech. All Rights Reserved.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+
+    <script src="script.js"></script>
+
 </body>
+
 </html>
